@@ -56,22 +56,6 @@ class Contract:
         self.royalties = royalties
         Contract.all.append(self)
 
-        # Validate that the contract is associated with an Author instance
-        if not isinstance(author, Author):
-            raise Exception("input is not an instance of Author")
-
-        # Validate that the contract is associated with a Book instance
-        if not isinstance(book, Book):
-            raise Exception("input is not an instance of Book")
-        
-        # Contract dates must be stored as a string
-        if not isinstance(date, str):
-            raise Exception("input is not an instance of String")
-
-        # Royalty values must be stored as an integer
-        if not isinstance(royalties, int):
-            raise Exception("input is not an instance of Integer")
-
     @property
     def author(self):
         """Return the author associated with this contract"""
